@@ -1,0 +1,220 @@
+[accessibility]
+ui_scale = 1.20
+
+[bar.default]
+concave_edge_corners = true
+center = ["clock"]
+end = [ "sysmon_2", "sysmon_3", "separator", "group:g3", "separator-1", "group:g2", "separator" ,"session" ]
+start = [ "workspaces", "separator", "tray", "separator"]
+margin_edge = 0
+margin_ends = 500
+radius_bottom_right = 10
+radius_bottom_left = 10
+scale = 1.20
+thickness = 40
+font_family = "DepartureMono Nerd Font"
+font_weight = 800
+background_opacity = 0.6
+padding = 15
+border_width = 0
+position = "top"
+capsule_radius = 0
+
+    [[bar.default.capsule_group]]
+    id = "g2"
+    members = [ "notifications", "network", "volume"]
+    widget_spacing = 10
+    opacity = 0
+
+    [[bar.default.capsule_group]]
+    id = "g3"
+    members = [ "settings","nightlight","control-center" ]
+    widget_spacing = 5
+    opacity = 0
+
+[shell]
+clipboard_image_action_command = "satty -f -"
+launch_apps_as_systemd_services = true
+polkit_agent = true
+settings_show_advanced = true
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.panel]
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "glass"
+
+    [shell.screenshot]
+    copy_to_clipboard = false
+    pipe_command = "satty -f -"
+    pipe_to_command = true
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 3.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[shell.screen_corners]
+enabled = true
+size = 100
+
+[shell.window_switcher]
+style = "compact"
+
+[system.monitor]
+gpu_poll_seconds = 2
+
+[theme]
+mode = "dark"
+source = "custom"
+custom_palette = "MyScheme"
+wallpaper_scheme = "m3-fruit-salad"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt", "alacritty" ]
+
+[widget.clock]
+format = "󰥔 {:%H:%M  %m-%d-%y}"
+capsule = false
+capsule_fill = "#f5f5f5"
+color = "#eadbb2"
+
+[widget.active_window]
+display = "icon_only"
+capsule = true
+capsule_fill = "#f5f5f4"
+show_empty_label = false
+min_length = 0
+
+[widget.launcher]
+glyph = "menu-1"
+custom_image_colorize = true
+capsule_fill = "#f5f5f5"
+scale = 1.5
+capsule = true
+color = "#0c0c0c"
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "always"
+capsule = true
+
+[widget.network]
+show_label = false
+show_vpn_label = true
+
+[widget.notifications]
+
+[widget.session]
+color = "#f28fad"
+scale = 1.3
+
+[widget.spacer_1]
+type = "spacer"
+
+[widget.temp]
+show_label = false
+
+[widget.sysmon_2]
+glyph = "gpu-usage"
+show_value = false
+show_glyph = false
+stat = "gpu_temp"
+type = "sysmon"
+color = "#39bae6"
+
+[widget.sysmon_3]
+stat = "ram_used"
+type = "sysmon"
+show_glyph = false
+show_value = false
+visualization = "gauge"
+color = "#39bae6"
+
+[widget.tray]
+capsule = false
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 2.5
+focused_color = "#eadbb2"
+occupied_color = "#b0b38f"
+empty_color = "#7d9e92"
+capsule = false
+show_labels = false
+capsule_fill = "#e199b2"
+inactive_pill_size = 1.0
+pill_scale = 0.8
+
+[widget.separator]
+type = "text"
+text = "|"
+
+[widget.separator-1]
+type = "text"
+text = "-"
+
+[widget.separator-2]
+type = "text"
+text = ""
+
+[widget.separator-custom]
+type = "text"
+text = "󰨕"
+
+[widget.memory]
+type = "text"
+text = ""
+
+[wallpaper]
+enabled = true
+directory = "/home/pakel/Pictures"
+fill_color = "#111111"
+
+[wallpaper.default]
+path = "/home/pakel/Pictures/v1.png"
+
+[dock]
+enabled = false
+icon_size = 40
+concave_edge_corners = false
+show_dots = true
+radius = 10
+radius_bottom_left = 0
+radius_bottom_right = 0
