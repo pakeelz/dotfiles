@@ -1,6 +1,7 @@
 # My Personal Dotfiles
 
 ![my-desktop](https://github.com/pakeelz/dotfiles/blob/main/.assets/my-desktop.jpg?raw=true)
+![my-desktop2](https://github.com/pakeelz/dotfiles/blob/main/.assets/my-desktop2.jpg?raw=true)
 
 These dotfiles contain several applications with default settings that I’ve modified slightly, such as:
 
