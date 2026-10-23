@@ -15,11 +15,13 @@ NOCT="$DIR/noctalia"
 PIC="$DIR/pictures"
 ZED="$DIR/zed"
 STARSHIP="$DIR/starship.toml"
+ZATHURA="$DIR/zathura"
+FASTFETCH="$DIR/fastfetch"
 
-FOLDERS=("$NVIM" "$KITTY" "$HYPR" "$NOCT" "$PIC" "$ZED" "$STARSHIP")
+FOLDERS=("$NVIM" "$KITTY" "$HYPR" "$NOCT" "$ZED" "$STARSHIP" "$ZATHURA" "$FASTFETCH")
 
 if [ -d $CONFIG_DIR ]; then
   for folder in "${FOLDERS[@]}"; do
-    mv $folder $CONFIG_DIR
+    rsync -a --remove-source-files $folder $CONFIG_DIR
   done
 fi
