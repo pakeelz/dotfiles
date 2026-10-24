@@ -46,13 +46,23 @@
 --       colorscheme = "ayu",
 --     },
 --   },
+
 -- }
+-- return {
+--   { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "gruvbox",
+--     },
+--   },
+-- }
+
 return {
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+  "anAcc22/sakura.nvim",
+  dependencies = "rktjmp/lush.nvim",
+  config = function()
+    vim.opt.background = "dark" -- or "light"
+    vim.cmd("colorscheme sakura") -- sets the colorscheme
+  end,
 }
