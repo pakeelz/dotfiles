@@ -22,10 +22,11 @@ FOLDERS=("$NVIM" "$KITTY" "$HYPR" "$NOCT" "$ZED" "$STARSHIP" "$ZATHURA" "$FASTFE
 
 if [ -d $CONFIG_DIR ]; then
   for folder in "${FOLDERS[@]}"; do
-    if [ -d $folder ]; then
-      echo "Moving $(basename "$folder") config"
+    if [ -d "$CONFIG_DIR/$(basename "$folder")" ]; then
+      echo "Rsync $(basename "$folder") config"
       rsync -a $folder "$CONFIG_DIR/$(basename "$folder")"
     else
+      echo "Moving $folder config"
       mv $folder $CONFIG_DIR
     fi
   done
