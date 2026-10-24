@@ -21,11 +21,14 @@ FASTFETCH="$DIR/fastfetch/"
 FOLDERS=("$NVIM" "$KITTY" "$HYPR" "$NOCT" "$ZED" "$STARSHIP" "$ZATHURA" "$FASTFETCH")
 
 if [ -d $CONFIG_DIR ]; then
-  echo "Moving config"
   for folder in "${FOLDERS[@]}"; do
+    echo "Moving $(basename "$folder") config"
     rsync -a $folder $CONFIG_DIR
   done
 fi
+
+echo "Moving pictures"
+rsync -a $PIC "$HOME"
 
 echo "Cleaning up $DIR"
 rm -rf $DIR
