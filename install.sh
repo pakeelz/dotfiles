@@ -33,7 +33,12 @@ if [ -d $CONFIG_DIR ]; then
 fi
 
 echo "Moving pictures"
-rsync -a $PIC "$HOME"
+
+if [ -d "$HOME/Pictures/" ]; then
+  rsync -a $PIC "$HOME"
+else
+  mv $PIC "$HOME"
+fi
 
 echo "Cleaning up $DIR"
 rm -rf $DIR
