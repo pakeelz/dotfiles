@@ -1,31 +1,26 @@
--- return {
---   {
---     "neanias/everforest-nvim",
---     version = false,
---     lazy = false,
---     priority = 1000, -- make sure to load this before all the other start plugins
---     -- Optional; default configuration will be used if setup isn't called.
---     config = function()
---       require("everforest").setup({
---         background = "hard",
---         transparent_background_level = 0,
---         ui_contrast = "high",
---         float_style = "dim",
---       })
---     end,
---   },
---   {
---     "navarasu/onedark.nvim",
---     priority = 1000, -- make sure to load this before all the other start plugins
---     config = function()
---       require("onedark").setup({
---         style = "darker",
---         transparent = false,
---       })
---       require("onedark").load()
---     end,
---   },
--- }
+return {
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    -- Optional; default configuration will be used if setup isn't called.
+    config = function()
+      require("everforest").setup({
+        background = "hard",
+        transparent_background_level = 1,
+        ui_contrast = "high",
+        float_style = "dim",
+      })
+    end,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "everforest",
+    },
+  },
+}
 -- return {
 --   -- 1. Install the Ayu colorscheme plugin
 --   {
@@ -58,11 +53,11 @@
 --   },
 -- }
 
-return {
-  "anAcc22/sakura.nvim",
-  dependencies = "rktjmp/lush.nvim",
-  config = function()
-    vim.opt.background = "dark" -- or "light"
-    vim.cmd("colorscheme sakura") -- sets the colorscheme
-  end,
-}
+-- return {
+--   "anAcc22/sakura.nvim",
+--   dependencies = "rktjmp/lush.nvim",
+--   config = function()
+--     vim.opt.background = "dark" -- or "light"
+--     vim.cmd("colorscheme sakura") -- sets the colorscheme
+--   end,
+-- }

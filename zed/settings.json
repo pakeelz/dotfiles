@@ -41,6 +41,6 @@
   "theme": {
     "mode": "dark",
     "light": "GitHub Light Monochrome",
-    "dark": "Everforest Dark Hard (regular)",
+    "dark": "Catppuccin Black",
   },
 }
