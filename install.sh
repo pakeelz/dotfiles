@@ -17,6 +17,7 @@ ZED="$DIR/zed/"
 STARSHIP="$DIR/starship.toml"
 ZATHURA="$DIR/zathura/"
 FASTFETCH="$DIR/fastfetch/"
+ZSHRC="$DIR/.zshrc"
 
 FOLDERS=("$NVIM" "$KITTY" "$HYPR" "$NOCT" "$ZED" "$STARSHIP" "$ZATHURA" "$FASTFETCH")
 
@@ -35,10 +36,18 @@ fi
 echo "Moving pictures"
 
 if [ -d "$HOME/Pictures/" ]; then
-  rsync -a $PIC "$HOME"
+  rsync -a $PIC "$HOME/Pictures/"
 else
-  mv $PIC "$HOME"
+  mv $PIC "$HOME/Pictures/"
 fi
+
+# Setup zsh
+mv "$ZSHRC" ~/
+
+mkdir ~/.zsh_plugins
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh_plugins/zsh-autosuggestions/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh_plugins/zsh-syntax-highlighting/
 
 echo "Cleaning up $DIR"
 rm -rf $DIR
